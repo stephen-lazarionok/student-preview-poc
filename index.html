@@ -1,0 +1,90 @@
+<html>
+<head>
+    <style type="text/css">
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+
+        .labelMode {
+            background-color: rgba(255, 255, 255, 1.0);
+            text-align: center;
+        }
+
+        .urlLabel {
+            background-color: rgba(255, 255, 255, 1.0);
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .btnClose {
+            background-color: rgba(255, 255, 255, 1.0);
+            position: absolute;
+            top: 30px;
+            left: 90%;
+
+        }
+
+        .frame {
+            position: relative;
+            top: 0px;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+        }
+
+        .dev-tools-container {
+            padding: 20px;
+            position: absolute;
+            right: 100px;
+            top: 100px;
+            background-color: burlywood;
+        }
+    </style>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function showStudentPreview() {
+
+            var baseURL = 'http://ls-qastaging.mheducation.com/flow/flowjs.html?name=container';
+            baseURL += "&sectionId=" + $('#in_section_id').val();
+
+
+            var overlay = jQuery('<div id="overlay">' +
+            '<h1 class="labelMode">Student preview mode</h1><button class="btnClose" onclick="removeOverlay()">Close</button>' +
+            '<iframe id="student_preview_frame" class="frame" src="' + baseURL + '"></iframe>' +
+            '<h3 class="urlLabel" id="url_label">12312312</h3>' +
+            '</div>');
+
+            overlay.appendTo(document.body);
+
+            var frameURL = $('#student_preview_frame').attr('src');
+            document.getElementById('url_label').innerHTML = frameURL;
+        }
+
+        function removeOverlay() {
+            $("#overlay").remove();
+        }
+    </script>
+</head>
+
+<body>
+<img src="imgs/ishp.png"/>
+
+<div class="dev-tools-container">
+    <span>Instructor ID:&nbsp;</span><input id="in_instructor_id" type="text"><br/><br/>
+    <span>Section ID:&nbsp;&nbsp;&nbsp;&nbsp;</span><input id="in_section_id" type="text"><br/>
+    <br/>
+
+    <button onclick="showStudentPreview()">Student Preview</button>
+</div>
+
+
+</body>
+</html>
