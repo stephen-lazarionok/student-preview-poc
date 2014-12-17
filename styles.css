@@ -1,0 +1,57 @@
+  #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+
+        .labelMode {
+            position: relative;
+            background-color: rgba(255, 255, 255, 1.0);
+            text-align: center;
+            width: 80%;
+            left: 10%;
+        }
+
+        .urlLabel {
+            background-color: rgba(255, 255, 255, 1.0);
+            text-align: center;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .btnClose {
+            background-color: rgba(255, 255, 255, 1.0);
+            position: absolute;
+            top: 30px;
+            left: 85%;
+
+        }
+
+        .frame {
+            position: relative;
+            top: 0px;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background-color: white;
+        }
+
+        .dev-tools-container {
+            padding: 20px;
+            position: absolute;
+            left: 400px;
+            top: 10px;
+            background-color: burlywood;
+        }
+
+        .showStudentMode {
+            padding: 5px;
+            position: absolute;
+            left: 830px;
+            top: 95px;
+            background-color: white;
+        }
