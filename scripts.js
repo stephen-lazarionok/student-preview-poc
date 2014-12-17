@@ -8,6 +8,7 @@ function showStudentPreview() {
         // TODO : get and pass the necessary input parameters
         resultURL += "&sectionId=" + $('#in_section_id').val();
         resultURL += "&insructorId=" + $('#in_instructor_id').val();
+        resultURL += "&sessionId=" + $('#in_session_id').val();
 
         return resultURL;
     }
