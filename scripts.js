@@ -3,12 +3,15 @@ function showStudentPreview() {
 
     // Resolves the container URL and populates it with input parameters
     function resolveContainerURL() {
-        var resultURL = 'http://ls-qastaging.mheducation.com/flow/flowjs.html?name=container';
+        var resultURL = 'http://ctr-qas.mheducation.com/flow/flowjs.html?name=container&login=3';
 
         // TODO : get and pass the necessary input parameters
-        resultURL += "&sectionId=" + $('#in_section_id').val();
-        resultURL += "&insructorId=" + $('#in_instructor_id').val();
+        resultURL += "&skipLogin=true";
+
+        resultURL += "&userId=" + $('#in_instructor_id').val();
         resultURL += "&sessionId=" + $('#in_session_id').val();
+
+        resultURL += "&sectionId=" + $('#in_section_id').val();        
 
         return resultURL;
     }
